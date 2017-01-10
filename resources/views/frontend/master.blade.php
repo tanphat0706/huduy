@@ -7,8 +7,10 @@
     <title>HUDUY Demo</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=vietnamese" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=vietnamese"
+          rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
+          type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap -->
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-
+    <script src="{{asset('js/jquery-2.2.3.min.js')}}"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,19 +32,43 @@
     <![endif]-->
 </head>
 <body>
-
+<div class="header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="user-menu">
+                    <ul>
+                        <li><i class="fa fa-phone"></i> 0907 606 887 - 0908 629 886</li>
+                        <li><a href="https://www.facebook.com/balohuduy"><i class="fa fa-facebook"></i>Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End header area -->
 <div class="site-branding-area">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <div class="logo">
-                    <h1><a href="./"><img src="img/logo.png"></a></h1>
+                    <h1><a href="#"><img src="{{asset('images/logo-huduy.png')}}"></a></h1>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="search">
+                    <div class="from-search">
+                        <form class="form-search" method="post">
+                            <input type="text" class="form-control" name="keyword" maxlength="20" placeholder="Tìm kiếm">
+                            <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div> <!-- End site branding area -->
 
+<!-- PC menu -->
 <div class="mainmenu-area">
     <div class="container">
         <div class="row">
@@ -56,14 +82,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop page</a></li>
-                    <li><a href="single-product.html">Single product</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="active"><a href="#">Trang chủ</a></li>
+                    <li class="sp-mode"><a href="#">Sản phẩm</a></li>
+                    <li class="sub-menu-parent pc-mode">
+                        <a href="#">Sản phẩm</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Vali kéo</a></li>
+                            <li><a href="#">Balo laptop</a></li>
+                            <li><a href="#">Balo học sinh</a></li>
+                            <li><a href="#">Balo du lịch</a></li>
+                            <li><a href="#">Cặp táp</a></li>
+                            <li><a href="#">Túi du lịch</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Liên hệ</a></li>
                 </ul>
             </div>
         </div>
@@ -74,31 +107,31 @@
     <!-- Slider -->
     <div class="block-slider block-slider4">
         <ul class="" id="bxslider-home4">
-            <li><img src="img/h4-slide2.png" alt="Slide">
+            <li><img src="{{asset('images/h4-slide2.png')}}" alt="Slide">
                 <div class="caption-group">
                     <h2 class="caption title">
-                        by one, get one <span class="primary">50% <strong>off</strong></span>
+                        <span class="primary">Balo học sinh</span>
                     </h2>
-                    <h4 class="caption subtitle">school supplies & backpacks.*</h4>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                    <h4 class="caption subtitle">Với nhiều mẫu mã mới</h4>
+                    <a class="caption button-radius" href="#"><span class="icon"></span>Xem ngay</a>
                 </div>
             </li>
-            <li><img src="img/h4-slide2.png" alt="Slide">
+            <li><img src="{{asset('images/banner_2.jpg')}}" alt="Slide">
                 <div class="caption-group">
                     <h2 class="caption title">
-                        Apple <span class="primary">Store <strong>Ipod</strong></span>
+                        <span class="primary">Túi du lịch</span>
                     </h2>
-                    <h4 class="caption subtitle">Select Item</h4>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                    <h4 class="caption subtitle">Nhiều mẫu sành điệu</h4>
+                    <a class="caption button-radius" href="#"><span class="icon"></span>Xem ngay</a>
                 </div>
             </li>
-            <li><img src="img/h4-slide2.png" alt="Slide">
+            <li><img src="{{asset('images/banner_3.jpg')}}" alt="Slide">
                 <div class="caption-group">
                     <h2 class="caption title">
-                        Apple <span class="primary">Store <strong>Ipod</strong></span>
+                        <span class="primary">Vali kéo</span>
                     </h2>
-                    <h4 class="caption subtitle">& Phone</h4>
-                    <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                    <h4 class="caption subtitle">Đầy màu sắc</h4>
+                    <a class="caption button-radius" href="#"><span class="icon"></span>Xem ngay</a>
                 </div>
             </li>
         </ul>
@@ -108,8 +141,10 @@
 
 <div class="promo-area container-fluid">
     <div class="container">
-        <h1>Về sản phẩm của HUDUY</h1>
-        <p>Sản phẩm của HUDUY đạt chuẩn chất lượng, mang phong cách năng động, trẻ trung sẽ là món đồ phụ kiện không thể thiếu của các bạn trẻ ngày nay.. Với thiết kế đơn giản, màu sắc đa dạng, kiểu dáng trẻ trung phù hợp với mọi lứa tuổi khách hàng, đặc biệt là sinh viên. Chất liệu vải bền có khả năng chống thấm, nhiều ngăn tiện dụng.
+        <h1>CTY TNHH SẢN XUẤT MAY TÚI XÁCH HOÀNG DUY</h1>
+        <p>Sản phẩm của HUDUY đạt chuẩn chất lượng, mang phong cách năng động, trẻ trung sẽ là món đồ phụ kiện không thể
+            thiếu của các bạn trẻ ngày nay.. Với thiết kế đơn giản, màu sắc đa dạng, kiểu dáng trẻ trung phù hợp với mọi
+            lứa tuổi khách hàng, đặc biệt là sinh viên. Chất liệu vải bền có khả năng chống thấm, nhiều ngăn tiện dụng.
         </p>
     </div>
 
@@ -121,26 +156,26 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="latest-product">
-                    <h2 class="section-title">Danh mục sản phẩm</h2>
+                    <h2 class="section-title">DANH MỤC SẢN PHẨM</h2>
                     <div class="product-carousel">
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-1.jpg" alt="">
+                                <img src="{{asset('images/product-1.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Vali kéo</a></h2>
+                            <h2><a href="#">Vali kéo</a></h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-2.jpg" alt="">
+                                <img src="{{asset('images/product-2.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
@@ -149,10 +184,10 @@
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-3.jpg" alt="">
+                                <img src="{{asset('images/product-3.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
@@ -161,22 +196,22 @@
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-4.jpg" alt="">
+                                <img src="{{asset('images/product-4.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Balo du lịch</a></h2>
+                            <h2><a href="#">Balo du lịch</a></h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-5.jpg" alt="">
+                                <img src="{{asset('images/product-5.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
@@ -185,15 +220,15 @@
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-6.jpg" alt="">
+                                <img src="{{asset('images/product-6.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Túi du lịch</a></h2>
+                            <h2><a href="#">Túi du lịch</a></h2>
                         </div>
                     </div>
                 </div>
@@ -208,38 +243,28 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="latest-product">
-                    <h2 class="section-title">Sản phẩm mới</h2>
+                    <div class="container-fluid nopadding brands-tit-div">
+                        <h2 class="section-title">Sản phẩm mới</h2>
+                    </div>
                     <div class="product-carousel">
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-1.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-6.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Vali kéo</a></h2>
+                            <h2><a href="#">Cặp táp học sinh</a></h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-2.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-7.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
-                                    </a>
-                                </div>
-                            </div>
-
-                            <h2>Balo laptop</h2>
-                        </div>
-                        <div class="single-product">
-                            <div class="product-f-image">
-                                <img src="img/product-3.jpg" alt="">
-                                <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
@@ -248,39 +273,39 @@
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-4.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-8.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Balo du lịch</a></h2>
+                            <h2>Balo du lịch</h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-5.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-9.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2>Cặp táp</h2>
+                            <h2><a href="#">Cặp táp nam</a></h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-6.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-10.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Túi du lịch</a></h2>
+                            <h2>Balo laptop</h2>
                         </div>
                     </div>
                 </div>
@@ -294,38 +319,28 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="latest-product">
-                    <h2 class="section-title">Sản phẩm bán chạy</h2>
+                    <div class="container-fluid nopadding brands-tit-div">
+                        <h2 class="section-title">Sản phẩm bán chạy</h2>
+                    </div>
                     <div class="product-carousel">
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-1.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-1.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Vali kéo</a></h2>
+                            <h2><a href="#">Cặp táp học sinh</a></h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-2.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-2.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
-                                    </a>
-                                </div>
-                            </div>
-
-                            <h2>Balo laptop</h2>
-                        </div>
-                        <div class="single-product">
-                            <div class="product-f-image">
-                                <img src="img/product-3.jpg" alt="">
-                                <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
@@ -334,39 +349,39 @@
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-4.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-3.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Balo du lịch</a></h2>
+                            <h2>Balo du lịch</h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-5.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-4.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2>Cặp táp</h2>
+                            <h2><a href="#">Cặp táp nam</a></h2>
                         </div>
                         <div class="single-product">
                             <div class="product-f-image">
-                                <img src="img/product-6.jpg" alt="">
+                                <img src="{{asset('images/sp-moi-5.jpg')}}" alt="">
                                 <div class="product-hover">
-                                    <a href="single-product.html" class="view-details-link">
-                                        <i class="fa fa-link"></i> See details
+                                    <a href="#" class="view-details-link">
+                                        <i class="fa fa-link"></i> Xem chi tiết
                                     </a>
                                 </div>
                             </div>
 
-                            <h2><a href="single-product.html">Túi du lịch</a></h2>
+                            <h2>Balo laptop</h2>
                         </div>
                     </div>
                 </div>
@@ -384,55 +399,39 @@
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-5 col-sm-6">
                 <div class="footer-about-us">
-                    <h2>u<span>Stora</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
-                    <div class="footer-social">
-                        <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    </div>
+                    <h2><span>HUDUY</span></h2>
+                    <p>Sản phẩm của HUDUY đạt chuẩn chất lượng, mang phong cách năng động, trẻ trung sẽ là món đồ phụ kiện không thể thiếu của các bạn trẻ ngày nay.. Với thiết kế đơn giản, màu sắc đa dạng, kiểu dáng trẻ trung phù hợp với mọi lứa tuổi khách hàng, đặc biệt là sinh viên. Chất liệu vải bền có khả năng chống thấm, nhiều ngăn tiện dụng.</p>
+
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="footer-menu">
-                    <h2 class="footer-wid-title">User Navigation </h2>
+                    <h2 class="footer-wid-title">Danh mục sản phẩm</h2>
                     <ul>
-                        <li><a href="#">My account</a></li>
-                        <li><a href="#">Order history</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">Vendor contact</a></li>
-                        <li><a href="#">Front page</a></li>
+                        <li><a href="#">Vali kéo</a></li>
+                        <li><a href="#">Balo laptop</a></li>
+                        <li><a href="#">Balo học sinh</a></li>
+                        <li><a href="#">Balo du lịch</a></li>
+                        <li><a href="#">Cặp táp</a></li>
+                        <li><a href="#">Túi du lịch</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-6">
+
+            <div class="col-md-4 col-sm-6">
                 <div class="footer-menu">
-                    <h2 class="footer-wid-title">Categories</h2>
+                    <h2 class="footer-wid-title">Liên hệ</h2>
                     <ul>
-                        <li><a href="#">Mobile Phone</a></li>
-                        <li><a href="#">Home accesseries</a></li>
-                        <li><a href="#">LED TV</a></li>
-                        <li><a href="#">Computer</a></li>
-                        <li><a href="#">Gadets</a></li>
+                        <li>Địa chỉ: <span class="contact-ft">B65 - B66 Đường số 6, khu HimLam Đồng Diều, X.Bình Hưng, H.Bình Chánh</span></li>
+                        <li>Điện thoại: </span><span class="contact-ft">08 54312807</span></li>
+                        <li>Điện thoại di động 1: </span><span class="contact-ft">0907 606 887</span></li>
+                        <li>Điện thoại di động 2: </span><span class="contact-ft">0908 629 886</span></li>
+                        <li>Điện thoại di động 3: <span class="contact-ft">0903 853 981</span></li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="footer-newsletter">
-                    <h2 class="footer-wid-title">Newsletter</h2>
-                    <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
-                    <div class="newsletter-form">
-                        <form action="#">
-                            <input type="email" placeholder="Type your email">
-                            <input type="submit" value="Subscribe">
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -442,18 +441,9 @@
 <div class="footer-bottom-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="copyright">
-                    <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="footer-card-icon">
-                    <i class="fa fa-cc-discover"></i>
-                    <i class="fa fa-cc-mastercard"></i>
-                    <i class="fa fa-cc-paypal"></i>
-                    <i class="fa fa-cc-visa"></i>
+                    <p>&copy; 2017 Túi xách Hoàng Duy. All Rights Reserved. </p>
                 </div>
             </div>
         </div>
@@ -462,7 +452,7 @@
 
 <!-- Latest jQuery form server -->
 {{--<script src="https://code.jquery.com/jquery.min.js"></script>--}}
-<script src="{{asset('js/jquery-2.2.3.min.js')}}"></script>
+
 
 <!-- Bootstrap JS form CDN -->
 <script src="{{asset('css/bootstrap/js/bootstrap.min.js')}}"></script>
