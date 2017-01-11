@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.master');
-});
+Route::get('/', [
+    'as' => 'frontend',
+    'uses' => 'HomeController@index'
+]);
+
+Route::get('/vali-keo', [
+    'as' => 'vali_keo',
+    'uses' => 'CategoryController@index'
+]);
+
+Route::get('/vali-keo/vali-keo-1', [
+    'as' => 'vali_keo_1',
+    'uses' => 'ProductController@index'
+]);
