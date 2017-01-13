@@ -1686,3 +1686,44 @@ nav > ul > li:first-child {
 .product-description{
     margin-top: 15px;
 }
+.widget_product_categories{
+    padding:20px;
+    background: #fff;
+}
+.section-nav-title{
+    margin: 0 0 10px 0;
+    color: #15110F;
+    text-transform: none;
+    padding: 0px 0px 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    font-weight: 200;
+}
+.product-categories{
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    list-style: none;
+}
+.product-categories li{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    vertical-align: middle;
+}
+.product-categories li a{
+    color: #555;
+}
+.product-categories li a:hover{
+    color: #15110F;
+}
+.widget_product_categories ul li:before{
+    content: "\f116";
+}

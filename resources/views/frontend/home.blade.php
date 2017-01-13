@@ -57,78 +57,20 @@
                     <div class="latest-product">
                         <h2 class="section-title">DANH MỤC SẢN PHẨM</h2>
                         <div class="product-carousel">
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/product-1.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
+                            @foreach($site_menus as $cate_list)
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="{{asset('images/categories/'.$cate_list->image)}}" alt="">
+                                        <div class="product-hover">
+                                            <a href="#" class="view-details-link">
+                                                <i class="fa fa-link"></i> Xem chi tiết
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <h2><a href="#">Vali kéo</a></h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/product-2.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
+                                    <h2><a href="#">{{$cate_list->name}}</a></h2>
                                 </div>
-
-                                <h2>Balo laptop</h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/product-3.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2>Balo học sinh</h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/product-4.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="#">Balo du lịch</a></h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/product-5.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2>Cặp táp</h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/product-6.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="#">Túi du lịch</a></h2>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -146,66 +88,20 @@
                             <h2 class="section-title">Sản phẩm mới</h2>
                         </div>
                         <div class="product-carousel">
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-6.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
+                            @foreach($products_high as $product_new)
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="{{asset('images/products/'.$product_new->image_1)}}" alt="">
+                                        <div class="product-hover">
+                                            <a href="#" class="view-details-link">
+                                                <i class="fa fa-link"></i> Xem chi tiết
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <h2><a href="#">Cặp táp học sinh</a></h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-7.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
+                                    <h2><a href="#">{{$product_new->name}}</a></h2>
                                 </div>
-
-                                <h2>Balo học sinh</h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-8.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2>Balo du lịch</h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-9.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="#">Cặp táp nam</a></h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-10.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2>Balo laptop</h2>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -227,7 +123,7 @@
                                 <div class="product-f-image">
                                     <img src="{{asset('images/sp-moi-1.jpg')}}" alt="">
                                     <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
+                                        <a href="#" class="view-details-link">
                                             <i class="fa fa-link"></i> Xem chi tiết
                                         </a>
                                     </div>
@@ -239,7 +135,7 @@
                                 <div class="product-f-image">
                                     <img src="{{asset('images/sp-moi-2.jpg')}}" alt="">
                                     <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
+                                        <a href="#" class="view-details-link">
                                             <i class="fa fa-link"></i> Xem chi tiết
                                         </a>
                                     </div>
@@ -251,7 +147,7 @@
                                 <div class="product-f-image">
                                     <img src="{{asset('images/sp-moi-3.jpg')}}" alt="">
                                     <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
+                                        <a href="#" class="view-details-link">
                                             <i class="fa fa-link"></i> Xem chi tiết
                                         </a>
                                     </div>
@@ -263,7 +159,7 @@
                                 <div class="product-f-image">
                                     <img src="{{asset('images/sp-moi-4.jpg')}}" alt="">
                                     <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
+                                        <a href="#" class="view-details-link">
                                             <i class="fa fa-link"></i> Xem chi tiết
                                         </a>
                                     </div>
@@ -275,7 +171,7 @@
                                 <div class="product-f-image">
                                     <img src="{{asset('images/sp-moi-5.jpg')}}" alt="">
                                     <div class="product-hover">
-                                        <a href="{{route('vali_keo_1')}}" class="view-details-link">
+                                        <a href="#" class="view-details-link">
                                             <i class="fa fa-link"></i> Xem chi tiết
                                         </a>
                                     </div>

@@ -23,10 +23,11 @@
             <div class="col-sm-6">
                 <div class="search">
                     <div class="from-search">
-                        <form class="form-search">
-                            <input type="text" class="form-control" name="keyword" maxlength="20" placeholder="Tìm kiếm">
-                            <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
-                        </form>
+                        {!! Form::open(['route'=>['search'], 'method'=> 'GET','class'=>'form-search']) !!}
+                        <input name="search" type="search" id="woocommerce-product-search-field" class="search-field" placeholder="Tìm sản phẩm…" value="" title="Search for:">
+                        <button type="submit" class="btn btn_search"><i class="fa fa-search"></i></button>
+                        <input type="hidden" name="post_type" value="product">
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -51,12 +52,11 @@
                     <li class="sub-menu-parent pc-mode">
                         <a href="javascript:void(0)">Sản phẩm</a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('vali_keo')}}">Vali kéo</a></li>
-                            <li><a href="{{route('vali_keo')}}">Balo laptop</a></li>
-                            <li><a href="{{route('vali_keo')}}">Balo học sinh</a></li>
-                            <li><a href="{{route('vali_keo')}}">Balo du lịch</a></li>
-                            <li><a href="{{route('vali_keo')}}">Cặp táp</a></li>
-                            <li><a href="{{route('vali_keo')}}">Túi du lịch</a></li>
+                            @foreach($site_menus as $menu)
+                                <li>
+                                    <a href="{{route('detail-category', $menu->alias)}}">{{$menu->name}}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="#">Giới thiệu</a></li>
