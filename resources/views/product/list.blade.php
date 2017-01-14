@@ -13,7 +13,8 @@
                         <thead style="color: blue;">
                         <tr>
                             <th>{{ trans('product.name') }}</th>
-                            <th>Nổi bật</th>
+                            <th>{{ trans('product.highlight') }}</th>
+                            <th>{{ trans('product.bestseller') }}</th>
                             <th>{{ trans('product.category') }}</th>
                             <th>{{ trans('product.created_at') }}</th>
                             <th>{{ trans('product.updated_at') }}</th>
@@ -47,6 +48,7 @@
         columns: [
         {data: 'name', name: 'products.name'},
         {data: 'highlight', name: 'products.highlight'},
+        {data: 'bestseller', name: 'products.bestseller'},
         {data: 'cateName', name: 'categories.name'},
         {data: 'pro_create', name: 'products.created_at', searchable:false},
         {data: 'pro_update', name: 'products.updated_at', searchable:false},

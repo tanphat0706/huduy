@@ -23,9 +23,11 @@ class Controller extends BaseController
         $site_menus = Categories::all();
         $cates_high = Categories::limit(3)->get();
         $products_high = $product->productHigh()->limit(7)->get();
+        $products_bestseller = $product->productBestSeller()->limit(7)->get();
         View::share('site_menus', $site_menus);
         View::share('cate_menus', $cate);
         View::share('cates_high', $cates_high);
         View::share('products_high', $products_high);
+        View::share('products_bestseller', $products_bestseller);
     }
 }

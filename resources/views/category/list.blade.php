@@ -15,7 +15,7 @@
                         <tr>
                             <th>{{ trans('category.name') }}</th>
                             {{--<th>{{ trans('category.image_url') }}</th>--}}
-                            <th>{{ trans('category.description') }}</th>
+                            <th>{{ trans('category.count') }}</th>
                             <th>{{ trans('category.created_at') }}</th>
                             <th>{{ trans('category.updated_at') }}</th>
                             <th>#</th>
@@ -47,7 +47,7 @@
     ajax: '{{ route("json-categories-list") }}',
     columns: [
     {data: 'name', name: 'categories.name'},
-    {data: 'description', name: 'categories.description'},
+    {data: 'count', name: 'categories.count', searchable:false, sortable:false},
     {data: 'created_at', name: 'categories.created_at', searchable:false},
     {data: 'updated_at', name: 'categories.updated_at', searchable:false},
     {data: 'action', name: 'action', orderable: false, searchable:false} ],

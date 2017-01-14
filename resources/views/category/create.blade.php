@@ -35,13 +35,13 @@
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="name">{{ trans('category.description') }}</label>
-                        <span class="required">*</span>
-                        {!!Form::text('description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
-                    </div>
-                </div>
+                {{--<div class="col-md-6">--}}
+                    {{--<div class="form-group">--}}
+                        {{--<label for="name">{{ trans('category.description') }}</label>--}}
+                        {{--<span class="required">*</span>--}}
+                        {{--{!!Form::text('description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}--}}
+                    {{--</div>--}}
+                {{--</div>--}}
                 <!-- /.col -->
             </div>
             <!-- /.row -->

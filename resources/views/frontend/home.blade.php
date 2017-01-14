@@ -62,13 +62,13 @@
                                     <div class="product-f-image">
                                         <img src="{{asset('images/categories/'.$cate_list->image)}}" alt="">
                                         <div class="product-hover">
-                                            <a href="#" class="view-details-link">
+                                            <a href="{{route('detail-category',$cate_list->alias)}}" class="view-details-link">
                                                 <i class="fa fa-link"></i> Xem chi tiết
                                             </a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="#">{{$cate_list->name}}</a></h2>
+                                    <h2><a href="{{route('detail-category',$cate_list->alias)}}">{{$cate_list->name}}</a></h2>
                                 </div>
                             @endforeach
                         </div>
@@ -93,13 +93,13 @@
                                     <div class="product-f-image">
                                         <img src="{{asset('images/products/'.$product_new->image_1)}}" alt="">
                                         <div class="product-hover">
-                                            <a href="#" class="view-details-link">
+                                            <a href="{{route('detail-product',[$cate_menus->getCateAlias($product_new->category_id)->alias,$product_new->alias])}}" class="view-details-link">
                                                 <i class="fa fa-link"></i> Xem chi tiết
                                             </a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="#">{{$product_new->name}}</a></h2>
+                                    <h2><a href="{{route('detail-product',[$cate_menus->getCateAlias($product_new->category_id)->alias,$product_new->alias])}}">{{$product_new->name}}</a></h2>
                                 </div>
                             @endforeach
                         </div>
@@ -119,66 +119,20 @@
                             <h2 class="section-title">Sản phẩm bán chạy</h2>
                         </div>
                         <div class="product-carousel">
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-1.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
+                            @foreach($products_bestseller as $bestSeller)
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="{{asset('images/products/'.$bestSeller->image_1)}}" alt="">
+                                        <div class="product-hover">
+                                            <a href="{{route('detail-product',[$cate_menus->getCateAlias($bestSeller->category_id)->alias,$bestSeller->alias])}}" class="view-details-link">
+                                                <i class="fa fa-link"></i> Xem chi tiết
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <h2><a href="#">Cặp táp học sinh</a></h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-2.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
+                                    <h2><a href="{{route('detail-product',[$cate_menus->getCateAlias($bestSeller->category_id)->alias,$bestSeller->alias])}}">{{$bestSeller->name}}</a></h2>
                                 </div>
-
-                                <h2>Balo học sinh</h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-3.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2>Balo du lịch</h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-4.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2><a href="#">Cặp táp nam</a></h2>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="{{asset('images/sp-moi-5.jpg')}}" alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="view-details-link">
-                                            <i class="fa fa-link"></i> Xem chi tiết
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <h2>Balo laptop</h2>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

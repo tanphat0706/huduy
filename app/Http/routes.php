@@ -14,7 +14,7 @@
  * BACKEND ROUTES
  */
 Route::group([
-    'middleware' => ['web'],
+    'middlewareGroup' => ['web'],
     'prefix' => 'admin'
 ], function () {
     Route::auth();

@@ -40,4 +40,18 @@ class Categories extends Model
             ->get();
         return $products;
     }
+    public function productBestSellerOfCate($id){
+        $products = Products::leftJoin('categories','products.category_id', '=' , 'categories.id')
+            ->where('products.category_id',$id)
+            ->where('products.bestseller', 1)
+            ->select('products.alias','products.id','products.name','products.image_1','products.category_id','products.bestseller')
+            ->get();
+        return $products;
+    }
+    public function countProductInCate($id){
+        $products = Products::leftJoin('categories','products.category_id', '=' , 'categories.id')
+            ->where('products.category_id',$id)
+            ->count();
+        return $products;
+    }
 }

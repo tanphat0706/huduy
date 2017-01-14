@@ -18,8 +18,9 @@ class Products extends Model
         'image_5',
         'image_6',
         'description',
-        'short_description',
+        'code',
         'highlight',
+        'bestseller',
         'category_id'
     ];
 
@@ -27,11 +28,15 @@ class Products extends Model
         $product = Products::where('highlight',1);
         return $product;
     }
+    public function productBestSeller(){
+        $product = Products::where('bestseller',1);
+        return $product;
+    }
     public function productRelated($id, $cate_id){
         $products = Products::leftJoin('categories','products.category_id', '=' , 'categories.id')
             ->where('products.category_id',$cate_id)
             ->whereNotIn('products.id',[$id])
-            ->select('products.alias','products.id','products.name','products.image_1','products.category_id','products.highlight')
+            ->select('products.alias','products.id','products.name','products.image_1','products.category_id','products.highlight','products.bestseller')
             ->get();
         return $products;
     }

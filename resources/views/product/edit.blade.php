@@ -14,29 +14,32 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">{{ trans('product.name') }}</label>
-                        <span class="required">*</span>
                         {!!Form::text('name', null , array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                     <div class="form-group">
                         <label for="name">{{ trans('product.category') }}</label>
-                        <span class="required">*</span>
                         {!! Form::select('category_id', $cates, null, ['class' => 'form-control', 'placeholder' => 'Chọn danh mục']) !!}
                     </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">{{ trans('product.short_description') }}</label>
+                        <label for="name">{{ trans('product.code') }}</label>
                         <span class="required">*</span>
-                        {!!Form::text('short_description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
+                        {!!Form::text('code', null , array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                     <div class="form-group">
-                        <label></label><br>
                         <div class="col-xs-8">
                             <div class="checkbox icheck">
                                 <label>
                                     {{ Form::checkbox('highlight', null, null) }}
                                     <span style="font-weight: bold;margin: 5px"> {{ trans('product.highlight') }} </span>
+                                </label>
+                            </div>
+                            <div class="checkbox icheck">
+                                <label>
+                                    {{ Form::checkbox('bestseller', null, null) }}
+                                    <span style="font-weight: bold;margin: 5px"> {{ trans('product.bestseller') }} </span>
                                 </label>
                             </div>
                         </div>
@@ -48,7 +51,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group col-sm-6 col-md-4 col-xs-12" style="float: left;">
-                        <label for="name">{{ trans('product.image_1') }}</label><span class="required">*</span>
+                        <label for="name">{{ trans('product.image_1') }}</label>
                         <div class="form-product-img">
                             <img class="img-responsive form-product" style="" src="{{asset('images/products/'.$product->image_1)}}" id="output1">
                         </div>
@@ -137,7 +140,6 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="name">{{ trans('product.description') }}</label>
-                        <span class="required">*</span>
                         {!!Form::textarea('description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                 </div>

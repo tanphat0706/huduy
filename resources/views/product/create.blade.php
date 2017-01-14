@@ -26,16 +26,20 @@
                 <!-- /.col -->
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">{{ trans('product.short_description') }}</label>
+                        <label for="name">{{ trans('product.code') }}</label>
                         <span class="required">*</span>
-                        {!!Form::text('short_description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
+                        {!!Form::text('code', null , array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                     <div class="form-group">
-                        <label></label><br>
                         <div class="col-xs-8">
                             <div class="checkbox icheck">
                                 <label>
                                     <input style="width: 15px;height: 15px" value="1" type="checkbox" name="highlight"><span style="font-weight: bold;margin: 5px"> {{ trans('product.highlight') }} </span>
+                                </label>
+                            </div>
+                            <div class="checkbox icheck">
+                                <label>
+                                    <input style="width: 15px;height: 15px" value="1" type="checkbox" name="bestseller"><span style="font-weight: bold;margin: 5px"> {{ trans('product.bestseller') }} </span>
                                 </label>
                             </div>
                         </div>
@@ -61,7 +65,7 @@
                         </script>
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-xs-12" style="float: left;">
-                        <label for="name">{{ trans('product.image_2') }}</label>
+                        <label for="name">{{ trans('product.image_2') }}</label><span class="required">*</span>
                         <div class="form-product-img">
                             <img class="img-responsive form-product" style="" src="{{asset('images/text.png')}}" id="output2">
                         </div>
@@ -75,7 +79,7 @@
                         </script>
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-xs-12" style="float: left;">
-                        <label for="name">{{ trans('product.image_3') }}</label>
+                        <label for="name">{{ trans('product.image_3') }}</label><span class="required">*</span>
                         <div class="form-product-img">
                             <img class="img-responsive form-product" style="" src="{{asset('images/text.png')}}" id="output3">
                         </div>

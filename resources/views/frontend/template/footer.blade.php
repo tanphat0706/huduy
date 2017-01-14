@@ -20,12 +20,11 @@
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">Danh mục sản phẩm</h2>
                     <ul>
-                        <li><a href="#">Vali kéo</a></li>
-                        <li><a href="#">Balo laptop</a></li>
-                        <li><a href="#">Balo học sinh</a></li>
-                        <li><a href="#">Balo du lịch</a></li>
-                        <li><a href="#">Cặp táp</a></li>
-                        <li><a href="#">Túi du lịch</a></li>
+                        @foreach($site_menus as $menu)
+                            <li>
+                                <a href="{{route('detail-category', $menu->alias)}}">{{$menu->name}}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

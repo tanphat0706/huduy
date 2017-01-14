@@ -39,12 +39,16 @@
                                         <a class="fancybox" href="{{asset('images/products/'.$product->image_3)}}" data-fancybox-group="gallery">
                                             <img src="{{asset('images/products/'.$product->image_3)}}" alt=""/>
                                         </a>
-                                        <a class="fancybox" href="{{asset('images/products/'.$product->image_4)}}" data-fancybox-group="gallery">
-                                            <img src="{{asset('images/products/'.$product->image_4)}}" alt=""/>
-                                        </a>
-                                        <a class="fancybox" href="{{asset('images/products/'.$product->image_5)}}" data-fancybox-group="gallery">
-                                            <img src="{{asset('images/products/'.$product->image_5)}}" alt=""/>
-                                        </a>
+                                        @if($product->image_4 != 'no-image.png')
+                                            <a class="fancybox" href="{{asset('images/products/'.$product->image_4)}}" data-fancybox-group="gallery">
+                                                <img src="{{asset('images/products/'.$product->image_4)}}" alt=""/>
+                                            </a>
+                                        @endif
+                                        @if($product->image_5 != 'no-image.png')
+                                            <a class="fancybox" href="{{asset('images/products/'.$product->image_5)}}" data-fancybox-group="gallery">
+                                                <img src="{{asset('images/products/'.$product->image_5)}}" alt=""/>
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             <div class="col-sm-6">

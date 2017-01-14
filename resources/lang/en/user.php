@@ -8,7 +8,7 @@ return [
      * |
      */
 
-    'add' => 'Add user',
+    'add' => 'Tạo user',
     'choose_group' => 'Choose Groups',
     'users'=>'Users',
     'del' => 'Del user',

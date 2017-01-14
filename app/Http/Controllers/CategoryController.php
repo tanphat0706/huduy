@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Response;
 use Datatables;
 use Auth;
+use Session;
 use App\Http\Requests;
 use App\Helpers\ConvertString;
 
@@ -52,7 +53,8 @@ class CategoryController extends Controller
         }
         $products = $this->_categories->productOfCate($current_cate->id);
         $productsHigh = $this->_categories->productHighOfCate($current_cate->id);
-        return view('frontend.category.detail',compact('products','productsHigh','cates','current_cate'));
+        $productsBestSeller = $this->_categories->productBestSellerOfCate($current_cate->id);
+        return view('frontend.category.detail',compact('products','productsHigh','productsBestSeller','cates','current_cate'));
     }
     /**
      * get list users to datatables
@@ -66,9 +68,13 @@ class CategoryController extends Controller
         if (! Auth::user()->hasRole('viewCategoryList')) {
             abort('403');
         }
-        $cate = Categories::select('id','name', 'image', 'description','created_at','updated_at');
+        $cate = Categories::select('id','name', 'image', 'created_at','updated_at');
         $buttons = array();
         return Datatables::of($cate)
+            ->editColumn('count', function ($cate) {
+                $count = $this->_categories->countProductInCate($cate->id);
+                return $count.' sản phẩm';
+            })
             ->addColumn('action', function ($cate) {
                 $buttons = array();
                 if (Auth::user()->hasRole('editCategory')) {
@@ -180,7 +186,7 @@ class CategoryController extends Controller
             $cate->image = $imageName. "." . $img_type;
         }
         $cate->alias = $alias;
-        $cate->description = $cateUpdate['description'];
+//        $cate->description = $cateUpdate['description'];
         $cate->save();
         return redirect()->route('category-list');
     }
@@ -191,7 +197,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
         if (! Auth::user()->hasRole('deleteCategory')) {
             abort('403');
@@ -200,7 +206,7 @@ class CategoryController extends Controller
         $cate=Categories::find($id);
         $check = $this->_categories->productOfCate($id);
         if(count($check)>0){
-            \Session::set('error','Danh mục hiện đang có sản phẩm, vui lòng xoá sản phẩm trước');
+            \Session::flash('error','Danh mục hiện đang có sản phẩm, vui lòng xoá sản phẩm trước');
         }else{
             \File::delete(public_path('images/categories/' . $cate->image_url));
             $cate->delete();

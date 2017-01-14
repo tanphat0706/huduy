@@ -35,12 +35,15 @@ class ProductController extends Controller
         if (! Auth::user()->hasRole('viewProductList')) {
             abort('403');
         }
-        $product = Products::select('products.id','products.name','products.highlight', 'categories.name as cateName','products.created_at as pro_create','products.updated_at as pro_update')
+        $product = Products::select('products.id','products.name','products.highlight','products.bestseller', 'categories.name as cateName','products.created_at as pro_create','products.updated_at as pro_update')
             ->leftJoin('categories', 'categories.id', '=', 'products.category_id');
         $buttons = array();
         return Datatables::of($product)
             ->editColumn('highlight', function ($product) {
                 return $product->highlight == 1 ? '<i class="fa fa-check text-success"></i>' : '';
+            })
+            ->editColumn('bestseller', function ($product) {
+                return $product->bestseller == 1 ? '<i class="fa fa-check text-success"></i>' : '';
             })
             ->addColumn('action', function ($product) {
                 $buttons = array();
@@ -129,6 +132,11 @@ class ProductController extends Controller
         }else{
             $product['highlight'] = 0;
         }
+        if(isset($product['bestseller'])){
+            $product['bestseller'] = 1;
+        }else{
+            $product['bestseller'] = 0;
+        }
         Products::create($product);
         return redirect()->route('product-list');
     }
@@ -180,13 +188,19 @@ class ProductController extends Controller
         $pro_update = Products::find($id);
         $product = $request->all();
         $pro_update->name = $product['name'];
+        $pro_update->code = $product['code'];
         $pro_update->description = $product['description'];
-        $pro_update->short_description = $product['short_description'];
+//        $pro_update->short_description = $product['short_description'];
         $pro_update->category_id = $product['category_id'];
         if(isset($product['highlight'])){
             $pro_update->highlight = 1;
         }else{
             $pro_update->highlight = 0;
+        }
+        if(isset($product['bestseller'])){
+            $pro_update->bestseller = 1;
+        }else{
+            $pro_update->bestseller = 0;
         }
         $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($pro_update->name)));
         $alias = str_replace(" ", "-", strtolower($convertString->convert_vi_to_en($pro_update->name)));

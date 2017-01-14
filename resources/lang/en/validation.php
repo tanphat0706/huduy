@@ -61,7 +61,7 @@ return [
     'numeric'              => 'The :attribute must be a number.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'The :attribute field is required.',
+    'required'             => ':attribute không được để trống',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :values is present.',
@@ -95,6 +95,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'category_id' => [
+            'required' => 'Hãy chọn danh mục sản phấm cho sản phẩm này',
+        ],
     ],
 
     /*
@@ -108,6 +111,14 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name'             => 'Tên',
+        'code'             => 'Mã sản phẩm',
+        'description'             => 'Mô tả',
+        'image_1'             => 'Hình sản phẩm 1',
+        'image_2'             => 'Hình sản phẩm 2',
+        'image_3'             => 'Hình sản phẩm 3',
+        'image'             => 'Hình',
+    ],
 
 ];

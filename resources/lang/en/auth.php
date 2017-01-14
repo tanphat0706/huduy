@@ -12,19 +12,19 @@ return [
      * |
      */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'login' => 'Login',
-    'signin' => 'Sign In',
-    'signup' => 'Sign Up',
-    'myaccount' => 'My Account',
-    'logout' => 'Logout',
-    'change_password' => 'Change password',
-    'remember_me' => 'Remember me',
-    'forget_password' => 'Forget password',
-    'reset_password' => 'Reset password',
-    'login_error' => 'Login error',
-    'failed_login_message' => 'Incorrect username or password',
-    'email' => 'E-Mail Address',
+    'failed' => 'Tài khoản hoặc mật khẩu không đúng.',
+    'throttle' => 'Đăng nhập quá nhiều. Xin hãy đợi trong :seconds giây.',
+    'login' => 'Đăng nhập',
+    'signin' => 'Đăng nhập',
+    'signup' => 'Đăng ký',
+    'myaccount' => 'Tài khoản',
+    'logout' => 'Thoát',
+    'change_password' => 'Đổi mật khẩu',
+    'remember_me' => 'Ghi nhớ',
+    'forget_password' => 'Quên mật khẩu',
+    'reset_password' => 'Reset mật khẩu',
+    'login_error' => 'Lỗi đăng nhập',
+    'failed_login_message' => 'Tài khoản hoặc mật khẩu không đúng.',
+    'email' => 'E-Mail',
     'send_reset_link' => 'Send Password Reset Link'
 ];

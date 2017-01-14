@@ -7,7 +7,7 @@ return [
      * |--------------------------------------------------------------------------
      * |
      */
-    'sku' => 'Mã SKU',
+    'code' => 'Mã sản phẩm',
     'related' => 'Sản phẩm liên quan',
     'review' => 'Đánh giá',
     'image_1' => 'Hình sản phẩm 1',
@@ -22,7 +22,8 @@ return [
     'price' => 'Giá',
     'old_price' => 'Giá cũ',
     'promotion_product' => 'Sản phẩm ưu đãi',
-    'highlight'=>'Sản phẩm nổi bật',
+    'highlight'=>'Sản phẩm mới',
+    'bestseller'=>'Sản phẩm bán chạy',
     'add' => 'Tạo sản phẩm',
     'title' => 'Tiêu đề',
     'description' => 'Mô tả',
