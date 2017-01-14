@@ -68,7 +68,7 @@
                 </div>
             {{ Form::close() }}
 
-                     <a href="{{ url('admin/password/reset') }}">{{ trans('auth.forget_password') }}</a><br>
+                     {{--<a href="{{ url('admin/password/reset') }}">{{ trans('auth.forget_password') }}</a><br>--}}
 
         </div>
         <!-- /.login-box-body -->

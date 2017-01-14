@@ -167,6 +167,47 @@ Route::group([
             ]);
         });
         /**
+         * Carousel router
+         *
+         * @author Phat Le
+         */
+        Route::group([
+            'prefix' => 'carousel'
+        ], function () {
+            Route::get('/list', [
+                'as' => 'carousel-list',
+                'uses' => 'CarouselController@index'
+            ]);
+            // Ajax for datatables
+            Route::get('/getCategoriesJson', [
+                'as' => 'json-carousel-list',
+                'uses' => 'CarouselController@getCarouselJson'
+            ]);
+            Route::get('/create', [
+                'as' => 'carousel-create',
+                'uses' => 'CarouselController@create'
+            ]);
+            Route::post('/store', [
+                'as' => 'carousel-store',
+                'uses' => 'CarouselController@store'
+            ]);
+
+            Route::get('/edit/{id}', [
+                'as' => 'carousel-edit',
+                'uses' => 'CarouselController@edit'
+            ]);
+
+            Route::put('/update/{id}', [
+                'as' => 'carousel-update',
+                'uses' => 'CarouselController@update'
+            ]);
+
+            Route::delete('/delete/{id}', [
+                'as' => 'carousel-del',
+                'uses' => 'CarouselController@destroy'
+            ]);
+        });
+        /**
          * Product router
          *
          * @author Phat Le

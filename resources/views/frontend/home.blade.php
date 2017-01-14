@@ -6,33 +6,17 @@
         <!-- Slider -->
         <div class="block-slider block-slider4">
             <ul class="" id="bxslider-home4">
-                <li><img src="{{asset('images/h4-slide2.png')}}" alt="Slide">
-                    <div class="caption-group">
-                        <h2 class="caption title">
-                            <span class="primary">Balo học sinh</span>
-                        </h2>
-                        <h4 class="caption subtitle">Với nhiều mẫu mã mới</h4>
-                        <a class="caption button-radius" href="#"><span class="icon"></span>Xem ngay</a>
-                    </div>
-                </li>
-                <li><img src="{{asset('images/banner_2.jpg')}}" alt="Slide">
-                    <div class="caption-group">
-                        <h2 class="caption title">
-                            <span class="primary">Túi du lịch</span>
-                        </h2>
-                        <h4 class="caption subtitle">Nhiều mẫu sành điệu</h4>
-                        <a class="caption button-radius" href="#"><span class="icon"></span>Xem ngay</a>
-                    </div>
-                </li>
-                <li><img src="{{asset('images/banner_3.jpg')}}" alt="Slide">
-                    <div class="caption-group">
-                        <h2 class="caption title">
-                            <span class="primary">Vali kéo</span>
-                        </h2>
-                        <h4 class="caption subtitle">Đầy màu sắc</h4>
-                        <a class="caption button-radius" href="#"><span class="icon"></span>Xem ngay</a>
-                    </div>
-                </li>
+                @foreach($carousel as $slide)
+                    <li><img src="{{asset('images/carousel_img/'.$slide->image)}}" alt="Slide">
+                        <div class="caption-group">
+                            <h2 class="caption title">
+                                <span class="primary">{{$slide->title}}</span>
+                            </h2>
+                            <h4 class="caption subtitle">{{$slide->description}}</h4>
+                            <a class="caption button-radius" href="{{$slide->link}}"><span class="icon"></span>Xem ngay</a>
+                        </div>
+                    </li>
+                @endforeach
             </ul>
         </div>
         <!-- ./Slider -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Carousel;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.home');
+        $carousel = Carousel::where('status',1)->get();
+        return view('frontend.home', compact('carousel'));
     }
 
     public function admin()
