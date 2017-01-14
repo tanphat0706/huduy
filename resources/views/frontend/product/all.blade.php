@@ -1,5 +1,5 @@
 @extends('frontend.template.master')
-@section('title', $current_cate->name)
+@section('title', trans('system.app_name'))
 @section('description', '')
 @section('content')
     <div class="product-big-title-area">
@@ -7,12 +7,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>{{$current_cate->name}}</h2>
+                        <h2>Sản phẩm</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
     <div class="single-product-area category-page">
         <div class="zigzag-bottom"></div>
         <div class="container">
@@ -50,7 +52,7 @@
                 </div>
             </div>
             <div class="pagination">
-                {{$products->links()}}
+                {{--{{$products->links()}}--}}
             </div>
         </div>
     </div>

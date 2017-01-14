@@ -59,8 +59,8 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="{{route('gioi-thieu')}}">Giới thiệu</a></li>
+                    <li><a href="{{route('lien-he')}}">Liên hệ</a></li>
                 </ul>
             </div>
         </div>

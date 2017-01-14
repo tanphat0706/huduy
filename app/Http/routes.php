@@ -278,6 +278,18 @@ Route::group([
         'as' => 'search',
         'uses' => 'QueryController@search'
     ]);
+    Route::get('/san-pham', [
+        'as' => 'all-product',
+        'uses' => 'ProductController@all_product'
+    ]);
+    Route::get('/gioi-thieu', [
+        'as' => 'gioi-thieu',
+        'uses' => 'HomeController@gioi_thieu'
+    ]);
+    Route::get('/lien-he', [
+        'as' => 'lien-he',
+        'uses' => 'HomeController@lien_he'
+    ]);
     Route::get('/{cate_alias}', [
         'as' => 'detail-category',
         'uses' => 'CategoryController@frontentDetail'
@@ -286,4 +298,5 @@ Route::group([
         'as' => 'detail-product',
         'uses' => 'ProductController@frontentDetail'
     ]);
+
 });

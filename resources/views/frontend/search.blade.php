@@ -45,7 +45,7 @@
                                 </div>
                                 <h3 class="product-name">{{$item_search->name}}</h3>
                                 <div class="product-code">
-                                    MS12394
+                                    {{$item_search->code}}
                                 </div>
                             </div>
                         @endforeach

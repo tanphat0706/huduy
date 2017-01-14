@@ -29,7 +29,9 @@
 <body class="login-page">
     <div class="login-box">
         <div class="login-logo">
-            <b style="color: #000;"> Admin dashboard | {{ trans('auth.login') }}</b>
+            <b style="color: #000;"> Đăng nhập</b>
+            <p style="color: #000;"> Trang quản trị</p>
+
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">

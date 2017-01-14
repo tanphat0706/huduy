@@ -1,13 +1,13 @@
 @extends('frontend.template.master')
-@section('title', trans('system.app_name'))
+@section('title', $product->name)
 @section('description', '')
 @section('content')
-    <div class="product-big-title-area">
+    <div class="product-big-title-area product-detail">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">
-                        <h2>{{$product->name}}</h2>
+                        <h2>CTY TNHH SẢN XUẤT MAY TÚI XÁCH HOÀNG DUY</h2>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                             <div class="col-sm-6">
                                 <div class="product-inner">
                                     <h2 class="product-name">{{$product->name}}</h2>
-                                    <div class="product-code">MS12394</div>
+                                    <div class="product-code">{{$product->code}}</div>
                                     <div class="product_meta">
                                         <span class="posted_in">Danh mục sản phẩm:
                                             <a href="{{route('detail-category',$cate->getCateAlias($product->category_id)->alias)}}">

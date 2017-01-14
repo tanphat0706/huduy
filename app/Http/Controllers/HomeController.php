@@ -33,4 +33,12 @@ class HomeController extends Controller
     {
         return view('admin');
     }
+    public function gioi_thieu()
+    {
+        return view('frontend.about');
+    }
+    public function lien_he()
+    {
+        return view('frontend.contact');
+    }
 }

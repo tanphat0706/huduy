@@ -157,6 +157,11 @@ class ProductController extends Controller
         $related = $this->_products->productRelated($product->id,$product->category_id);
         return view('frontend.product.detail', compact('product','cate','related'));
     }
+    public function all_product(){
+        $cates = Categories::all();
+        $products = Products::all();
+        return view('frontend.product.all', compact('products','cates'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
