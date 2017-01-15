@@ -42,7 +42,11 @@
             @endif
             <!-- END SIDEBAR MENU: USER -->
             <li class="treeview {{ (Route::is('carousel-list') ? ' active' : '') }} {{ (Route::is('carousel-create') ? ' active' : '') }}">
-                <a href="#"> <i class="fa fa-picture-o"></i><span>{{ trans('carousel.carousel') }}</span></a>
+                <a href="#"> <i class="fa fa-picture-o"></i><span>{{ trans('carousel.carousel') }}</span>
+                    <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                </a>
                 <ul class="treeview-menu">
 
                     <li {{ (Route::is('carousel-list') ? 'class  =active' : '') }}><a

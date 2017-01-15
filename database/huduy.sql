@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2017 at 09:38 AM
+-- Generation Time: Jan 14, 2017 at 03:43 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -33,8 +33,8 @@ CREATE TABLE `carousel` (
   `image` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -151,8 +151,8 @@ CREATE TABLE `products` (
   `highlight` tinyint(1) NOT NULL DEFAULT '0',
   `bestseller` tinyint(1) NOT NULL DEFAULT '0',
   `category_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --

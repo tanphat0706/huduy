@@ -48,7 +48,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{route('frontend')}}">Trang chủ</a></li>
-                    <li class="sp-mode"><a href="#">Sản phẩm</a></li>
+                    <li class="sp-mode"><a href="{{route('all-product')}}">Sản phẩm</a></li>
                     <li class="sub-menu-parent pc-mode">
                         <a href="javascript:void(0)">Sản phẩm</a>
                         <ul class="sub-menu">

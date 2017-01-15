@@ -1,6 +1,6 @@
 @extends('backend.master')
-@section('title', trans('system.home'))
-@section('page_title') {{ trans('system.home') }}
+@section('title', 'Trang quản trị')
+@section('page_title') Trang quản trị
 @stop
 
 @section('content')
