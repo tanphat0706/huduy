@@ -206,9 +206,10 @@ body {
     padding: 20px;
 }
 
-.mainmenu-area ul.navbar-nav li.active a {
+.mainmenu-area ul.navbar-nav li.active a,
+.sub-menu-parent a.active{
     background: #3b3b3b;
-    color: #ffd900;
+    color: #ffd900 !important;
 }
 
 .mainmenu-area ul.navbar-nav li:hover a {
@@ -1065,8 +1066,8 @@ input[type="submit"]:hover, button[type=submit]:hover {
     width: 76px;
 }
 
-.product-name {
-    font-size: 20px;
+.category-page .product-name {
+    font-size: 20px !important;
     margin-bottom: 20px;
 }
 

@@ -15,7 +15,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse pull-left"  id="navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{route('frontend')}}"><i class="fa fa-home"></i> Trang chủ</a></li>
+                <li><a target="_blank" href="{{route('frontend')}}"><i class="fa fa-home"></i> Trang chủ</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

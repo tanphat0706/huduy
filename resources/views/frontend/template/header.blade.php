@@ -5,7 +5,7 @@
                 <div class="user-menu">
                     <ul>
                         <li><i class="fa fa-phone"></i> 0907 606 887 - 0908 629 886</li>
-                        <li><a href="https://www.facebook.com/balohuduy"><i class="fa fa-facebook"></i>Facebook</a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/balohuduy"><i class="fa fa-facebook"></i>Facebook</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,10 +47,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{route('frontend')}}">Trang chủ</a></li>
-                    <li class="sp-mode"><a href="{{route('all-product')}}">Sản phẩm</a></li>
+                    <li class="{{ (Route::is('frontend') ? ' active' : '') }}"><a href="{{route('frontend')}}">Trang chủ</a></li>
+                    <li class="sp-mode"><a class="{{ (Route::is('all-product') ? ' active' : '') }}" href="{{route('all-product')}}">Sản phẩm</a></li>
                     <li class="sub-menu-parent pc-mode">
-                        <a href="javascript:void(0)">Sản phẩm</a>
+                        <a class="{{ (Route::is('detail-category') ? 'active' : '') }}" href="javascript:void(0)">Sản phẩm</a>
                         <ul class="sub-menu">
                             @foreach($site_menus as $menu)
                                 <li>
@@ -59,8 +59,8 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="{{route('gioi-thieu')}}">Giới thiệu</a></li>
-                    <li><a href="{{route('lien-he')}}">Liên hệ</a></li>
+                    <li class="{{ (Route::is('gioi-thieu') ? 'active' : '') }}"><a href="{{route('gioi-thieu')}}">Giới thiệu</a></li>
+                    <li class="{{ (Route::is('lien-he') ? 'active' : '') }}"><a href="{{route('lien-he')}}">Liên hệ</a></li>
                 </ul>
             </div>
         </div>
