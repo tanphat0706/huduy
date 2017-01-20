@@ -15,12 +15,12 @@
 <div class="site-branding-area">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 col-xs-5">
                 <div class="logo">
                     <h1><a href="#"><img src="{{asset('images/logo-huduy.png')}}"></a></h1>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 col-xs-7">
                 <div class="search">
                     <div class="from-search">
                         {!! Form::open(['route'=>['search'], 'method'=> 'GET','class'=>'form-search']) !!}

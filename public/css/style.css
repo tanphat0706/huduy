@@ -1523,19 +1523,32 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
     .pc-mode{
         display: none !important;
     }
+    .block-slider .caption-group .button-radius{
+        float: right;
+    }
+    .product-hover a.view-details-link {
+        bottom: -45%;
+    }
+    .product-hover i{
+        padding: 0 !important;
+    }
+    .single-product:hover .product-hover a.view-details-link{
+        bottom: 45%;
+    }
     .block-slider .caption-group{
         position: absolute;
         top: 10%;
         right: 5%;
+        max-width: 50%;
     }
     .block-slider .caption-group h2{ font-size: 20px}
-    .block-slider .caption-group h4{font-size: 16px}
+    .block-slider .caption-group h4{font-size: 14px}
     .zigzag-bottom{
         display: none;
     }
     .search {
-        margin: 0px -10px 15px;
-        display: none;
+        margin: 15% 0px;
+        /*display: none;*/
     }
     .brands-area h2.section-title {
         font-size: 2rem;
