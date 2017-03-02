@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Response;
 use Datatables;
 use Auth;
+use Image;
 use App\Http\Requests;
 use App\Helpers\ConvertString;
 
@@ -122,7 +123,8 @@ class ProductController extends Controller
                 $img_type[$i] = $request->file('image_'.$i)->getClientOriginalExtension();
                 $image[$i] = \Image::make($request->file('image_'.$i)->getRealPath());
                 $imageName[$i] = "img_" . $trimSpace .'_'.$i;
-                $image[$i]->fit(600, 600)->save(public_path('images/products/'. $imageName[$i] . '.' . $img_type[$i]));
+//                $image[$i]->fit(600, 600)->save(public_path('images/products/'. $imageName[$i] . '.' . $img_type[$i]));
+                $image[$i]->save(public_path('images/products/'. $imageName[$i] . '.' . $img_type[$i]));
                 $product['image_'.$i] = $imageName[$i].".".$img_type[$i];
             }
         }
@@ -216,7 +218,8 @@ class ProductController extends Controller
                 $img_type[$i] = $request->file('image_'.$i)->getClientOriginalExtension();
                 $image[$i] = \Image::make($request->file('image_'.$i)->getRealPath());
                 $imageName[$i] = "img_" . $trimSpace .'_'.$i;
-                $image[$i]->fit(600, 600)->save(public_path('images/products/'. $imageName[$i] . '.' . $img_type[$i]));
+//                $image[$i]->fit(600, 600)->save(public_path('images/products/'. $imageName[$i] . '.' . $img_type[$i]));
+                $image[$i]->save(public_path('images/products/'. $imageName[$i] . '.' . $img_type[$i]));
                 $pro_update->$img_fields = $imageName[$i].".".$img_type[$i];
             }
         }

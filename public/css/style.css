@@ -1503,8 +1503,19 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
     .search {
         display: block !important;
     }
+    .single-product-area .product-name{
+        padding-bottom: 15px;
+    }
+    .product-f-image img{
+        height: 255px;
+    }
 }
-
+@media (min-width: 1201px) {
+    .product-f-image img{
+        height: 330px;
+        width: 100%;
+    }
+}
 .search-1 {
     padding-top: 4px;
 }
