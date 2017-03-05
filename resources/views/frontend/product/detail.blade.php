@@ -29,28 +29,20 @@
                         <div class="row">
                             <!-- Show the Images -->
                             <div class="column product-images col-sm-6">
-                                    <a class="fancybox" href="{{asset('images/products/'.$product->image_1)}}" data-fancybox-group="gallery" >
-                                        <img src="{{asset('images/products/'.$product->image_1)}}" alt=""/>
-                                    </a>
-                                    {{--<div class="thumbnails">--}}
-                                        {{--<a class="fancybox" href="{{asset('images/products/'.$product->image_2)}}" data-fancybox-group="gallery">--}}
-                                            {{--<img src="{{asset('images/products/'.$product->image_2)}}" alt=""/>--}}
-                                        {{--</a>--}}
-                                        {{--<a class="fancybox" href="{{asset('images/products/'.$product->image_3)}}" data-fancybox-group="gallery">--}}
-                                            {{--<img src="{{asset('images/products/'.$product->image_3)}}" alt=""/>--}}
-                                        {{--</a>--}}
-                                        {{--@if($product->image_4 != 'no-image.png')--}}
-                                            {{--<a class="fancybox" href="{{asset('images/products/'.$product->image_4)}}" data-fancybox-group="gallery">--}}
-                                                {{--<img src="{{asset('images/products/'.$product->image_4)}}" alt=""/>--}}
-                                            {{--</a>--}}
-                                        {{--@endif--}}
-                                        {{--@if($product->image_5 != 'no-image.png')--}}
-                                            {{--<a class="fancybox" href="{{asset('images/products/'.$product->image_5)}}" data-fancybox-group="gallery">--}}
-                                                {{--<img src="{{asset('images/products/'.$product->image_5)}}" alt=""/>--}}
-                                            {{--</a>--}}
-                                        {{--@endif--}}
-                                    {{--</div>--}}
+                                <a class="fancybox" href="{{asset('images/products/'.$product->image_1)}}" data-fancybox-group="gallery" >
+                                    <img src="{{asset('images/products/'.$product->image_1)}}" alt=""/>
+                                </a>
+                                <div class="thumbnails">
+                                    @for($i = 2; $i <6; $i++)
+                                        {{--*/ $img = 'image_'.$i /*--}}
+                                        @if($product->$img != 'no-image.png')
+                                            <a class="fancybox" href="{{asset('images/products/'.$product->$img)}}" data-fancybox-group="gallery">
+                                                <img src="{{asset('images/products/'.$product->$img)}}" alt=""/>
+                                            </a>
+                                        @endif
+                                    @endfor
                                 </div>
+                            </div>
                             <div class="col-sm-6">
                                 <div class="product-inner">
                                     <h2 class="product-name">{{$product->name}}</h2>

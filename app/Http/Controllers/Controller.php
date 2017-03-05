@@ -20,9 +20,9 @@ class Controller extends BaseController
         // Fetch the Site Settings object
         $cate = new Categories();
         $product = new Products();
-        $site_menus = Categories::all();
-        $cates_high = Categories::limit(3)->get();
-        $products_high = $product->productHigh()->limit(7)->get();
+        $site_menus = Categories::all()->sortBy('name');
+        $cates_high = Categories::limit(3)->orderBy('name','asc')->get();
+        $products_high = $product->productHigh()->limit(7)->orderBy('updated_at','asc')->get();
         $products_bestseller = $product->productBestSeller()->limit(7)->get();
         View::share('site_menus', $site_menus);
         View::share('cate_menus', $cate);

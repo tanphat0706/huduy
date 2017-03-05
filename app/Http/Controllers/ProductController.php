@@ -213,7 +213,6 @@ class ProductController extends Controller
         $alias = str_replace(" ", "-", strtolower($convertString->convert_vi_to_en($pro_update->name)));
         for ($i=1;$i<7;$i++){
             if(isset($product['image_'.$i])){
-//                dd($pro_update->image_5);
                 $img_fields = 'image_'.$i;
                 $img_type[$i] = $request->file('image_'.$i)->getClientOriginalExtension();
                 $image[$i] = \Image::make($request->file('image_'.$i)->getRealPath());

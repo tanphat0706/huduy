@@ -1475,7 +1475,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
 .single-shop-product {
     margin-bottom: 50px
 }
-
+.pagination{ float:right }
 .pagination > li > a, .pagination > li > span {
     color: #ffd900;
 }
@@ -1512,7 +1512,11 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
 }
 @media (min-width: 1201px) {
     .product-f-image img{
-        height: 330px;
+        height: 300px;
+        width: 100%;
+    }
+    .brands-area .product-f-image img{
+        height: 270px;
         width: 100%;
     }
 }

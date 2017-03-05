@@ -23,13 +23,13 @@ class Categories extends Model
     public function productOfCateForMenu($id){
         $products = Products::leftJoin('categories','products.category_id', '=' , 'categories.id')
             ->where('products.category_id',$id)
-            ->select('products.alias','products.id','products.name','products.image_1','products.category_id','products.highlight')->get();
+            ->select('products.alias','products.id','products.name','products.image_1','products.category_id','products.highlight')->orderBy('name', 'asc')->get();
         return $products;
     }
     public function productOfCate($id){
         $products = Products::leftJoin('categories','products.category_id', '=' , 'categories.id')
             ->where('products.category_id',$id)
-            ->select('products.alias','products.id','products.name','products.image_1','products.category_id','products.highlight')->paginate(10);
+            ->select('products.alias','products.id','products.name','products.image_1','products.category_id','products.highlight')->orderBy('name', 'asc')->paginate(9);
         return $products;
     }
     public function productHighOfCate($id){
